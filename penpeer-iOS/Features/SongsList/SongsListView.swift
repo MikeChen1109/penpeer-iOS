@@ -1,4 +1,5 @@
 import SwiftUI
+import CachedAsyncImage
 
 struct SongsListView: View {
     @StateObject private var viewModel: SongsListViewModel
@@ -86,10 +87,10 @@ private struct SongRowView: View {
     }
 
     private var artwork: some View {
-        AsyncImage(url: song.artworkUrl100.flatMap(URL.init(string:))) { image in
+        CachedAsyncImage(url: song.artworkUrl100.flatMap(URL.init(string:))) { image in
             image
                 .resizable()
-                .aspectRatio(contentMode: .fill)
+                .aspectRatio(contentMode: .fit)
         } placeholder: {
             Color.gray.opacity(0.2)
         }
