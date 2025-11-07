@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9437F9652EBDB15000DCF956 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9437F9642EBDB15000DCF956 /* Alamofire */; };
+		9437F9762EBDF91E00DCF956 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9437F9752EBDF91E00DCF956 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9437F9762EBDF91E00DCF956 /* SDWebImage in Frameworks */,
 				9437F9652EBDB15000DCF956 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,6 +133,7 @@
 			name = "penpeer-iOS";
 			packageProductDependencies = (
 				9437F9642EBDB15000DCF956 /* Alamofire */,
+				9437F9752EBDF91E00DCF956 /* SDWebImage */,
 			);
 			productName = "penpeer-iOS";
 			productReference = 9437F8F62EBD85B200DCF956 /* penpeer-iOS.app */;
@@ -216,6 +219,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				9437F9632EBDB15000DCF956 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				9437F9742EBDF91E00DCF956 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9437F8F72EBD85B200DCF956 /* Products */;
@@ -582,6 +586,14 @@
 				minimumVersion = 5.10.2;
 			};
 		};
+		9437F9742EBDF91E00DCF956 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.21.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -589,6 +601,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9437F9632EBDB15000DCF956 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		9437F9752EBDF91E00DCF956 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9437F9742EBDF91E00DCF956 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
