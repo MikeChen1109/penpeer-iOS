@@ -16,7 +16,7 @@ final class MainTabBarController: UITabBarController {
             selectedImage: UIImage(systemName: "music.note.list")
         )
 
-        let search = SearchPlaceholderViewController()
+        let search = SearchViewController()
         let searchNav = UINavigationController(rootViewController: search)
         searchNav.tabBarItem = UITabBarItem(
             title: "Search",
