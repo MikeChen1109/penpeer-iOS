@@ -40,10 +40,14 @@ struct SongsListView: View {
 
     private var list: some View {
         List {
-            ForEach(viewModel.items) { song in
+            ForEach(
+                Array(viewModel.items.enumerated()),
+                id: \.element.id
+            ) { index, song in
                 SongRowView(
                     song: song,
                     isFavorite: viewModel.isFavorite(song),
+                    rank: index + 1,
                     toggleFavorite: { viewModel.toggleFavorite(song) }
                 )
             }
@@ -55,23 +59,21 @@ struct SongsListView: View {
 private struct SongRowView: View {
     let song: Song
     let isFavorite: Bool
+    let rank: Int
     let toggleFavorite: () -> Void
 
     var body: some View {
         HStack(spacing: 12) {
+            Text("\(rank)")
             artwork
             VStack(alignment: .leading, spacing: 4) {
                 Text(song.trackName)
                     .font(.headline)
-                    .lineLimit(2)
-                Text(song.artistName)
+                    .lineLimit(1)
+                Text(subtitle())
                     .font(.subheadline)
                     .foregroundColor(.secondary)
-                if let collectionName = song.collectionName {
-                    Text(collectionName)
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                }
+                    .lineLimit(1)
             }
             Spacer()
             Button(action: toggleFavorite) {
@@ -92,7 +94,15 @@ private struct SongRowView: View {
             Color.gray.opacity(0.2)
         }
         .frame(width: 60, height: 60)
-        .clipShape(RoundedRectangle(cornerRadius: 8))
+    }
+    
+    private func subtitle() -> String {
+        let artistName = song.artistName
+        let collectionName = song.collectionName
+        if let collectionName {
+            return "\(artistName) - \(collectionName)"
+        }
+        return artistName
     }
 }
 
