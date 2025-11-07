@@ -37,7 +37,6 @@ final class ChartSectionHeaderView: UICollectionReusableView {
         let stack = UIStackView(arrangedSubviews: [titleLabel, actionButton])
         stack.axis = .horizontal
         stack.alignment = .center
-        stack.spacing = 8
 
         addSubview(stack)
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -45,8 +44,8 @@ final class ChartSectionHeaderView: UICollectionReusableView {
         NSLayoutConstraint.activate([
             stack.topAnchor.constraint(equalTo: topAnchor),
             stack.bottomAnchor.constraint(equalTo: bottomAnchor),
-            stack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            stack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+            stack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+            stack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
         ])
     }
 }

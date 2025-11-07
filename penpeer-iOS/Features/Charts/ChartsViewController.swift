@@ -160,7 +160,6 @@ final class ChartsViewController: UIViewController {
     }
 
     private func applySnapshot() {
-        print("Applying snapshot")
         var snapshot = Snapshot()
         displayedSections = []
 

@@ -43,8 +43,6 @@ final class SongChartCell: UICollectionViewCell {
         contentView.backgroundColor = .clear
 
         artworkImageView.contentMode = .scaleAspectFill
-        artworkImageView.clipsToBounds = true
-        artworkImageView.layer.cornerRadius = 8
         artworkImageView.translatesAutoresizingMaskIntoConstraints = false
         artworkImageView.widthAnchor.constraint(equalToConstant: 60).isActive = true
         artworkImageView.heightAnchor.constraint(equalToConstant: 60).isActive = true

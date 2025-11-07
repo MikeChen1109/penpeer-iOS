@@ -34,8 +34,6 @@ final class AlbumChartCell: UICollectionViewCell {
         contentView.backgroundColor = .clear
 
         artworkImageView.contentMode = .scaleAspectFill
-        artworkImageView.clipsToBounds = true
-        artworkImageView.layer.cornerRadius = 12
         artworkImageView.translatesAutoresizingMaskIntoConstraints = false
         artworkImageView.heightAnchor.constraint(equalTo: artworkImageView.widthAnchor).isActive = true
 
