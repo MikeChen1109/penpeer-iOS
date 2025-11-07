@@ -15,7 +15,7 @@ final class SongsListViewModel: ObservableObject {
     init(
         term: String,
         service: ITunesServiceType = ITunesService(),
-        favorites: FavoritesStoreType = FavoritesStore(),
+        favorites: FavoritesStoreType = FavoritesStore.shared,
         pageSize: Int = 36
     ) {
         self.term = term

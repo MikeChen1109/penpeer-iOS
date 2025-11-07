@@ -45,7 +45,7 @@ final class ChartsViewModel {
     init(
         service: ITunesServiceType = ITunesService(),
         reachability: Reachability = .shared,
-        favorites: FavoritesStoreType = FavoritesStore(),
+        favorites: FavoritesStoreType = FavoritesStore.shared,
         term: String = "周杰倫"
     ) {
         self.service = service
