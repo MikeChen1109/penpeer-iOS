@@ -7,11 +7,13 @@ protocol FavoritesStoreType {
 }
 
 final class FavoritesStore: FavoritesStoreType {
+    static let shared = FavoritesStore()
+    
     private let key = "favorites.ids"
     private let defaults: UserDefaults
     private var cache: Set<String>
 
-    init(defaults: UserDefaults = .standard) {
+    private init(defaults: UserDefaults = .standard) {
         self.defaults = defaults
         self.cache = Set(defaults.stringArray(forKey: key) ?? [])
     }
