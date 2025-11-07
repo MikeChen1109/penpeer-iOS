@@ -3,7 +3,6 @@ import Foundation
 protocol ITunesServiceType {
     func fetchSongs(term: String, limit: Int, offset: Int) async throws -> SearchResponse<Song>
     func fetchAlbums(term: String, limit: Int, offset: Int) async throws -> SearchResponse<Album>
-    func fetchMusicVideos(term: String, limit: Int, offset: Int) async throws -> SearchResponse<MusicVideo>
 }
 
 final class ITunesService: ITunesServiceType {
@@ -19,9 +18,5 @@ final class ITunesService: ITunesServiceType {
 
     func fetchAlbums(term: String, limit: Int, offset: Int) async throws -> SearchResponse<Album> {
         try await client.request(.search(term: term, entity: "album", limit: limit, offset: offset))
-    }
-
-    func fetchMusicVideos(term: String, limit: Int, offset: Int) async throws -> SearchResponse<MusicVideo> {
-        try await client.request(.search(term: term, entity: "musicVideo", limit: limit, offset: offset))
     }
 }
