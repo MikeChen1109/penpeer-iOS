@@ -1,7 +1,7 @@
 import Foundation
 
 enum APIEndpoint {
-    case search(term: String, media: String? = nil, entity: String? = nil, limit: Int? = nil, offset: Int? = nil)
+    case search(term: String, media: String? = nil, entity: String? = nil, limit: Int? = nil)
 
     var baseURL: String { "https://itunes.apple.com" }
 
@@ -16,12 +16,11 @@ enum APIEndpoint {
 
     var parameters: [String: Any] {
         switch self {
-        case let .search(term, media, entity, limit, offset):
+        case let .search(term, media, entity, limit):
             var params: [String: Any] = ["term": term]
             if let media { params["media"] = media }
             if let entity { params["entity"] = entity }
             if let limit { params["limit"] = limit }
-            if let offset { params["offset"] = offset }
             return params
         }
     }

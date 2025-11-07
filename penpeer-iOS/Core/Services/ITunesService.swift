@@ -13,10 +13,10 @@ final class ITunesService: ITunesServiceType {
     }
 
     func fetchSongs(term: String, limit: Int, offset: Int) async throws -> SearchResponse<Song> {
-        try await client.request(.search(term: term, media: "music", limit: limit, offset: offset))
+        try await client.request(.search(term: term, media: "music", limit: limit))
     }
 
     func fetchAlbums(term: String, limit: Int, offset: Int) async throws -> SearchResponse<Album> {
-        try await client.request(.search(term: term, entity: "album", limit: limit, offset: offset))
+        try await client.request(.search(term: term, entity: "album", limit: limit))
     }
 }
