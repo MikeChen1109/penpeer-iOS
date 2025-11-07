@@ -42,7 +42,7 @@ final class SongChartCell: UICollectionViewCell {
     private func configure() {
         contentView.backgroundColor = .clear
 
-        artworkImageView.contentMode = .scaleAspectFill
+        artworkImageView.contentMode = .scaleAspectFit
         artworkImageView.translatesAutoresizingMaskIntoConstraints = false
         artworkImageView.widthAnchor.constraint(equalToConstant: 60).isActive = true
         artworkImageView.heightAnchor.constraint(equalToConstant: 60).isActive = true
