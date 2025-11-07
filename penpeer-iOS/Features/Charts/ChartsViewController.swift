@@ -2,7 +2,7 @@ import SwiftUI
 import UIKit
 
 @MainActor
-final class ChartsViewController: UIViewController {
+class ChartsContentViewController: UIViewController {
     private enum SectionKind: Int, Hashable {
         case songs
         case albums
@@ -69,8 +69,11 @@ final class ChartsViewController: UIViewController {
         loadData()
     }
 
+    func reloadContent() {
+        loadData()
+    }
+
     private func configureUI() {
-        title = "Music"
         view.backgroundColor = .systemBackground
 
         view.addSubview(collectionView)
@@ -320,5 +323,18 @@ final class ChartsViewController: UIViewController {
             elementKind: UICollectionView.elementKindSectionHeader,
             alignment: .top
         )
+    }
+}
+
+@MainActor
+final class ChartsViewController: ChartsContentViewController {
+    override init(viewModel: ChartsViewModel) {
+        super.init(viewModel: viewModel)
+        title = "Music"
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
