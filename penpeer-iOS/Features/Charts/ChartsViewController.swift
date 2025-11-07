@@ -287,7 +287,6 @@ final class ChartsViewController: UIViewController {
             layoutSize: groupSize,
             repeatingSubitem: item, count: 4,
         )
-        group.interItemSpacing = .fixed(12)
 
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPaging
